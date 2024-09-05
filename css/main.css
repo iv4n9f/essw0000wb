@@ -1,0 +1,265 @@
+:root {
+  /* Palettes */
+
+  /* Light mode */
+  --background-color-lg: #f5f5f5;
+  --main-color-lg: #333;
+  --primary-color-lg: #007bff;
+  --secondary-color-lg: #6c757d;
+
+  /* Dark mode */
+  --background-color-dk: #121212;
+  --main-color-dk: #f5f5f5;
+  --primary-color-dk: #007bff;
+  --secondary-color-dk: #6c757d;
+
+  /* General */
+
+  /* Fonts */
+
+  --font-family: "system-ui";
+}
+
+* {
+  font-family: var(--font-family);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 0.75vw;
+}
+
+body {
+  margin: 1rem 5rem;
+}
+
+.body-light {
+  background-color: var(--background-color-lg);
+  color: var(--main-color-lg);
+}
+
+.body-dark {
+  background-color: var(--background-color-dk);
+  color: var(--main-color-dk);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 2.5rem 5rem;
+  border-radius: 1rem;
+}
+
+.body-light .navigation {
+  border-right: 0.25rem solid var(--main-color-lg);
+  border-bottom: 0.1rem solid var(--main-color-lg);
+  box-shadow: 0 0 0.25rem var(--main-color-lg);
+}
+
+.body-dark .navigation {
+  border-right: 0.25rem solid var(--main-color-dk);
+  border-bottom: 0.1rem solid var(--main-color-dk);
+  box-shadow: 0 0 0.25rem var(--main-color-dk);
+}
+
+#logo {
+  width: 5vw;
+  height: 5vw;
+}
+
+.body-light #logo {
+  filter: drop-shador(0 0 1rem var(--main-color-lg));
+}
+
+.body-dark #logo {
+  filter: drop-shador(0 0 1rem var(--main-color-dk));
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.body-light .links a {
+  color: var(--main-color-lg);
+}
+
+.body-dark .links a {
+  color: var(--main-color-dk);
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 5%;
+  margin: 0 5rem 0 0;
+}
+
+.theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.body-light .theme {
+  background: var(--background-color-lg);
+  color: var(--main-color-lg);
+  border: none;
+}
+
+.body-dark .theme {
+  background: var(--background-color-dk);
+  color: var(--main-color-dk);
+  border: none;
+}
+
+.language {
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.language:hover {
+  text-decoration: underline;
+}
+
+.body-light .language {
+  background-color: var(--background-color-lg);
+  color: var(--main-color-lg);
+}
+
+.body-dark .language {
+  background-color: var(--background-color-dk);
+  color: var(--main-color-dk);
+}
+
+.language option {
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.language option :hover {
+  text-decoration: underline;
+}
+
+.body-light .language option::selection {
+  background-color: var(--background-color-dk);
+  color: var(--main-color-dk);
+}
+
+.body-dark .language option::selection {
+  background-color: var(--background-color-lg);
+  color: var(--main-color-lg);
+}
+
+.body-dark .language option {
+  background-color: var(--background-color-dk);
+  color: var(--main-color-dk);
+}
+
+.body-light .language option {
+  background-color: var(--background-color-lg);
+  color: var(--main-color-lg);
+}
+
+.content {
+  margin: 5rem 0;
+  padding: 0 5rem;
+}
+
+#menu {
+  border: none;
+  text-decoration: none;
+}
+
+.body-light #menu {
+  color: var(--main-color-lg);
+  background-color: var(--background-color-lg);
+}
+
+.body-dark #menu {
+  color: var(--main-color-dk);
+  background-color: var(--background-color-dk);
+}
+
+@media screen and (min-width: 1025px) {
+  .navigation {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .links {
+    display: flex;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+html {
+    font-size: 2.5vw;
+}
+  body {
+    margin: 2.5rem;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+  }
+
+  .links {
+    display: none;
+  }
+
+  #logo {
+    height: 10vw;
+    width: 10vw;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    width: 100%;
+  }
+
+  #menu {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
